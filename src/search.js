@@ -7,6 +7,7 @@ async function search(query) {
         return response.data.albums;
     } catch (error) {
         console.log(error);
+        console.log('error');
         return [];
     }
 }
