@@ -11,4 +11,4 @@ async function search(query) {
     }
 }
 
-export default search();
+module.exports = search;
