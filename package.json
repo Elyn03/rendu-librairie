@@ -1,5 +1,5 @@
 {
-  "name": "librairie_rendu",
+  "name": "fetch-ts-songs-package",
   "version": "1.0.0",
   "description": "rendu : création de librairie",
   "main": "index.js",
