@@ -1,4 +1,4 @@
-// search.js
+// searchAlbum.js
 const axios = require('axios');
 
 async function search(query) {

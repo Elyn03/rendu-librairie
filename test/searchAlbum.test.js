@@ -1,5 +1,5 @@
 import axios from "axios";
-import search from "../src/search";
+import search from "../src/searchAlbum";
 
 jest.mock('axios');
 
