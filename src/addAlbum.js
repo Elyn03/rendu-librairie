@@ -13,4 +13,5 @@ async function addAlbum(title, artist) {
     }
 }
 
+console.log('begin test');
 module.exports = addAlbum;
