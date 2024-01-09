@@ -34,4 +34,4 @@ describe('Ajout d\'un album', () => {
 
 });
 
-console.log("correct conflict")
+console.log("correct conflict");
