@@ -28,7 +28,8 @@ describe('Ajout d\'un album', () => {
 
         const result = await addAlbum('Error Album', 'Error Artist');
 
-        expect(result).toBeNull();
+        expect(result).toEqual(new Error('Erreur lors de la requête API'));
+
     });
 
 });

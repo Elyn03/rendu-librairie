@@ -10,7 +10,7 @@ async function addAlbum(title, artist) {
         return response.data;
     } catch (error) {
         console.error('Erreur lors de l\'ajout d\'un album', error);
-        return null;
+        return error;
     }
 }
 

@@ -39,6 +39,6 @@ describe('Recherche', () => {
 
         const results = await search('error');
 
-        expect(results).toEqual([]);
+        expect(results).toEqual(error);
     });
 });
