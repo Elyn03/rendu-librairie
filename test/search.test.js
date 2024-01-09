@@ -4,40 +4,41 @@ import search from "../src/search";
 jest.mock('axios');
 
 describe('Recherche', () => {
-    describe('Recherche avec une API', () => {
-        test('recherche avec le terme "1989"', async () => {
-            const mockData = {
-                albums: [
-                    { title: '1989', artist: 'Taylor Swift' },
-                    { title: 'Red', artist: 'Taylor Swift' },
 
-                    // Ajoute d'autres albums si nécessaire
-                ],
-            };
+    const mockData = {
+        albums: [
+            { title: '1989', artist: 'Taylor Swift' },
+            { title: 'Red', artist: 'Taylor Swift' }
+        ]
+    };
 
-            axios.get.mockResolvedValue({ data: mockData });
+    const emptyData = {
+        albums: []
+    };
 
-            const results = await search('1989' , 'Red');
+    const error = new Error('Erreur lors de la requête API');
 
-            expect(results).toEqual([{ title: '1989', artist: 'Taylor Swift' } , { title: 'Red', artist: 'Taylor Swift' },]);
-        });
+    test('recherche avec le terme "1989"', async () => {
+        axios.get.mockResolvedValue({ data: mockData });
 
-        test('recherche avec un terme qui ne correspond à rien', async () => {
-            axios.get.mockResolvedValue({ data: { albums: [] } });
+        const results = await search('1989', 'Red');
 
-            const emptyResults = await search('nonexistent');
-
-            expect(emptyResults).toEqual([]);
-        });
+        expect(results).toEqual(mockData.albums);
     });
 
-    describe('Gestion des erreurs API', () => {
-        test('gestion des erreurs lors de la recherche', async () => {
-            axios.get.mockRejectedValue(new Error('Erreur lors de la requête API'));
+    test('recherche avec un terme qui ne correspond à rien', async () => {
+        axios.get.mockResolvedValue({ data: emptyData });
 
-            const results = await search('error');
+        const emptyResults = await search('nonexistent');
 
-            expect(results).toEqual([]);
-        });
+        expect(emptyResults).toEqual(emptyData.albums);
+    });
+
+    test('gestion des erreurs lors de la recherche', async () => {
+        axios.get.mockRejectedValue(error);
+
+        const results = await search('error');
+
+        expect(results).toEqual([]);
     });
 });
