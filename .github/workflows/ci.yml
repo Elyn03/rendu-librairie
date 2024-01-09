@@ -2,6 +2,8 @@ name: Continious Integration
 
 on:
   push:
+    branches:
+      - 'lynda'
 
 jobs:
   ci:
