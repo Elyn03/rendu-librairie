@@ -6,7 +6,7 @@ jest.mock('axios');
 describe('Recherche', () => {
 
     const mockData = {
-        albums: [
+        songs: [
             {
                 title: 'The Archer',
                 artist: 'Taylor Swift'
