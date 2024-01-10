@@ -1,5 +1,5 @@
 import axios from "axios";
-import {sortByAsc} from '../src/filterAlbum';
+import sortByAsc from '../src/filterAlbum.js';
 
 jest.mock('axios');
 
@@ -28,7 +28,7 @@ describe('Sort Albums by Title', () => {
 
    test('trier les albums par ordre alphabétique', async () => {
       axios.get.mockResolvedValue({ data: mockData });
-      const sortedAlbums = await sortByAsc(emptyData);
+      const sortedAlbums = await sortByAsc();
       expect(sortedAlbums).toEqual(mockData.albums);
    });
 
