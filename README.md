@@ -17,6 +17,8 @@ Install the package with npm
 - Search Album
 - Search Song
 - Add Album
+- Share Album
+- Filter Album by asc
 
 
 ## API Reference
