@@ -1,6 +1,6 @@
 {
   "name": "fetch-ts-songs-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "rendu : création de librairie",
   "main": "index.js",
   "scripts": {
